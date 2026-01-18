@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blood Donation Dashboard</title>
+  <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+
+<div class="dashboard">
+  <h2>Welcome to Blood Donation Portal</h2>
+
+  <div class="actions">
+    <button onclick="openModal('requestModal')">🩸 Request Blood</button>
+    <button onclick="openModal('appointmentModal')">🕒 Book Donation</button>
+  </div>
+</div>
+
+<!-- REQUEST BLOOD MODAL -->
+<div class="modal" id="requestModal">
+  <div class="modal-content">
+    <span onclick="closeModal('requestModal')">&times;</span>
+    <h3>Request Blood</h3>
+
+    <input id="hospitalName" placeholder="Hospital Name">
+    <input id="city" placeholder="City">
+    <select id="bloodGroup">
+      <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+      <option>O+</option><option>O-</option><option>AB+</option><option>AB-</option>
+    </select>
+    <input id="units" type="number" placeholder="Units Required">
+    <textarea id="message" placeholder="Emergency message"></textarea>
+
+    <button onclick="submitRequest()">Submit</button>
+  </div>
+</div>
+
+<!-- APPOINTMENT MODAL -->
+<div class="modal" id="appointmentModal">
+  <div class="modal-content">
+    <span onclick="closeModal('appointmentModal')">&times;</span>
+    <h3>Book Donation Appointment</h3>
+
+    <input id="userId" placeholder="Your User ID">
+    <input id="hospitalId" placeholder="Hospital ID">
+    <input id="date" type="date">
+    <input id="time" type="time">
+
+    <button onclick="bookAppointment()">Book</button>
+  </div>
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>
